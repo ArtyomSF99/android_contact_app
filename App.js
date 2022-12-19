@@ -1,12 +1,38 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, View, SafeAreaView, Button } from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native-web';
+import MainStack from './navigate';
+
+
+
 
 export default function App() {
+  const[contacts, setContacts] = useState([])
+
+  const createContact = () =>{
+    console.log('kek')
+  }
+  
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+   
+ <SafeAreaView style={styles.container}>
+    <MainStack/>
+      {/* <Header/>
+      <View style={{width:'40%', marginLeft:'30%', marginTop:'5%', marginBottom:'5%'}}>
+      <Button
+      color="green"
+      title="Add contact"
+      onPress={createContact}
+      />
+      </View>
+      <ContactList/> */}
+     
+     
+     
+    </SafeAreaView>
   );
 }
 
@@ -14,7 +40,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    
   },
+  addButton: {
+    color:"#841584",
+  },
+  
 });
